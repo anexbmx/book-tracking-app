@@ -49,6 +49,7 @@ export default class SearchPage extends React.Component {
         books[index] = book;
         this.setState({ books });
     }
+    
     render() {
         const { books } = this.state;
         const { afterUpdateBook } = this.props;
