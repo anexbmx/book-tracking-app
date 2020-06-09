@@ -31,7 +31,6 @@ export default class SearchPage extends React.Component {
     }
 
     getBooks = (value) => {
-
         BooksAPI.search(value).then((books) => {
             if (books && books.length > 0) {
                 books.map((book) => {
@@ -45,6 +44,11 @@ export default class SearchPage extends React.Component {
         })
     }
 
+    updateShelfBook = (index, book) => {
+        const { books } = this.state;
+        books[index] = book;
+        this.setState({ books });
+    }
     render() {
         const { books } = this.state;
         const { afterUpdateBook } = this.props;
@@ -64,6 +68,7 @@ export default class SearchPage extends React.Component {
                 <div className="search-books-results">
                     <BookShelf afterUpdateBook={afterUpdateBook}
                         books={books}
+                        updateShelfBook={this.updateShelfBook}
                         title="Search..." />
                 </div>
             </div>
