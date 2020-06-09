@@ -13,10 +13,10 @@ export default class Book extends React.Component {
 
     componentDidMount() {
         this.setState({
-            book: {...this.props.book}
+            book: this.props.book
         })
     }
-    
+
     moveBook = (shelf) => {
         BooksApi.update(this.state.book, shelf).then((result) => {
             let book = this.state.book;
