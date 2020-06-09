@@ -25,15 +25,7 @@ class BooksApp extends React.Component {
 
   getBooksByShelf = shelf => this.state.books.filter((book) => book.shelf === shelf)
 
-  afterUpdateBook = () => {
-    this.fetchBooks();
-  }
-
-  addNewBook = (newBook) => {
-    const { books } = this.state;
-    books.push(newBook)
-    this.setState({ books })
-  }
+  afterUpdateBook = () => { this.fetchBooks(); }
 
   render() {
     return (
