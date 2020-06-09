@@ -56,7 +56,8 @@ export default class SearchPage extends React.Component {
                     </Link>
                     <div className="search-books-input-wrapper">
 
-                        <input onChange={e => this.inputStream.next(e.target.value)} type="text" placeholder="Search by title or author" />
+                        <input onChange={e => this.inputStream.next(e.target.value)}
+                            type="text" placeholder="Search by title or author" />
 
                     </div>
                 </div>
